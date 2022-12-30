@@ -1,3 +1,4 @@
 prepare:
-  spilt: 03
+  split: 03
   seed: 2022
+  tag: 

@@ -1,8 +1,8 @@
-import argparse
 import os
 import logging
-from src.utils import read_yaml, create_directories, process_posts
+from src.utils import read_yaml, create_directories
 import random
+import argparse
 
 
 STAGE = "Prepare_data" ## <<< change stage name 
@@ -15,33 +15,33 @@ logging.basicConfig(
     )
 
 
-# def main(config_path, params_path):
-#     ## read config files
-#     config = read_yaml(config_path)
-#     params = read_yaml(params_path)
+def main(config_path, params_path):
+    ## read config files
+    config = read_yaml(config_path)
+    params = read_yaml(params_path)
     
-#     source_data_dir = config["source_data"]["data_dir"]
-#     source_data_file = config["source_data"]["data_file"]
-#     source_data_path = os.path.join(source_data_dir, source_data_file)
+    source_data_dir = config["source_data"]["data_dir"]
+    source_data_file = config["source_data"]["data_file"]
+    source_data_path = os.path.join(source_data_dir, source_data_file)
 
-#     split = params["prepare"]["split"] # split ratio
-#     seed = params["prepare"]["seed"]
-#     tag = params["prepare"]["tag"]
+    split = params["prepare"]["split"] # split ratio
+    seed = params["prepare"]["seed"]
+    tag = params["prepare"]["tag"]
 
-#     random.seed(seed)
+    random.seed(seed)
 
-#     artifacts = config["artifacts"]
-#     prepare_data_dir_path = os.path.join(artifacts["ARTIFACTS_DIR"], artifacts["PREPARED_DATA"])
-#     create_directories([prepare_data_dir_path])
+    artifacts = config["artifacts"]
+    prepare_data_dir_path = os.path.join(artifacts["ARTIFACTS_DIR"], artifacts["PREPARED_DATA"])
+    create_directories([prepare_data_dir_path])
 
-#     train_data_path = os.path.join(prepare_data_dir_path,artifacts["TRAIN_DATA"])
-#     test_data_path = os.path.join(prepare_data_dir_path,artifacts["TEST_DATA"])
+    # train_data_path = os.path.join(prepare_data_dir_path,artifacts["TRAIN_DATA"])
+    # test_data_path = os.path.join(prepare_data_dir_path,artifacts["TEST_DATA"])
 
-#     encode = "utf8"
-#     with open(source_data_path, encoding=encode) as fd_in: # actual input data that we are reading
-#         with open(train_data_path, "w", encoding=encode) as fd_out_train: # writing train data
-#             with open(test_data_path, "w", encoding=encode) as fd_out_test: # writing test data
-#                 process_posts(fd_in, fd_out_train, fd_out_test, tag, split)
+    # encode = "utf8"
+    # with open(source_data_path, encoding=encode) as fd_in: # actual input data that we are reading
+    #     with open(train_data_path, "w", encoding=encode) as fd_out_train: # writing train data
+    #         with open(test_data_path, "w", encoding=encode) as fd_out_test: # writing test data
+    #             process_posts(fd_in, fd_out_train, fd_out_test, tag, split)
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     try:
         logging.info("\n********************")
         logging.info(f">>>>> stage {STAGE} started <<<<<")
-        #main(config_path=parsed_args.config, params_path=parsed_args.params)
+        main(config_path=parsed_args.config, params_path=parsed_args.params)
         logging.info(f">>>>> stage {STAGE} completed!<<<<<\n")
     except Exception as e:
         logging.exception(e)
