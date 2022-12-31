@@ -10,5 +10,7 @@ scikit-learn
 lxml
 argparse
 random
+re
+et-xmlfile
 ### local packages -
 -e . # << uncomment this to install from setup.py
