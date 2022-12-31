@@ -1,4 +1,4 @@
-# dvc-NLP-project
+# DVC-NLP-project
 DVC NLP project
 
 ## STEPS -
