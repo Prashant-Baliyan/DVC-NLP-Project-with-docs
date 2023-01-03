@@ -28,22 +28,22 @@ stages:
     - artifacts/model/model.pkl
 
 
-  # evaluate:
-  #   cmd: python src/stage_04_evaluate.py
-  #   deps:
-  #   - src/stage_04_evaluate.py
-  #   - src/utils
-  #   - artifacts/features/test.pkl
-  #   - artifacts/model/model.pkl
-  #   metrics:
-  #     - scores.json:
-  #         cache: false
-  #   plots:
-  #     - prc.json:
-  #         cache: false
-  #         x: recall
-  #         y: precision
-  #     - roc.json:
-  #         cache: false
-  #         x: fpr
-  #         y: tpr
+  evaluate:
+    cmd: python src/stage_04_evaluate.py
+    deps:
+    - src/stage_04_evaluate.py
+    - src/utils
+    - artifacts/features/test.pkl
+    - artifacts/model/model.pkl
+    metrics:
+      - scores.json:
+          cache: false
+    plots:
+      - prc.json:
+          cache: false
+          x: recall
+          y: precision
+      - roc.json:
+          cache: false
+          x: fpr
+          y: tpr

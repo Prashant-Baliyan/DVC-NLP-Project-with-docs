@@ -28,7 +28,7 @@ def process_posts(fd_in, fd_out_train, fd_out_test, target_tag, split):
             line_num += 1
         except Exception as e:
             msg = f"Skipping the broken line {line_num}: {e}\n"
-            #logging.exception(msg)
+            logging.exception(msg)
 
 
 def save_matrix(df, text_matrix, out_path):
@@ -39,4 +39,4 @@ def save_matrix(df, text_matrix, out_path):
 
     msg = f"The output matrix saved at {out_path} of shape: {result.shape}"
     logging.info(msg)
-    joblib.dump(result, out_path)
+    joblib.dump(result, out_path) 

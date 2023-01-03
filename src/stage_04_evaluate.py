@@ -40,9 +40,8 @@ def main(config_path, params_path):
     labels = np.squeeze(matrix[:, 1].toarray())
     X = matrix[:, 2:]
 
-    #predictions_probabilities = model.predict_proba(X)
-    pred = model.predict_proba(X)[:, 1]
-    #pred = predictions_probabilities[:, 1]
+    predictions_probabilities = model.predict_proba(X)
+    pred = predictions_probabilities[:, 1]
     
     logging.info(f"labels, predictions: {list(zip(labels, pred))}")
 

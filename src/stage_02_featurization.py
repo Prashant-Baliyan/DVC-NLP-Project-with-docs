@@ -77,4 +77,4 @@ if __name__ == '__main__':
         logging.info(f">>>>> stage {STAGE} completed!<<<<<\n")
     except Exception as e:
         logging.exception(e)
-        raise 
+        raise e
