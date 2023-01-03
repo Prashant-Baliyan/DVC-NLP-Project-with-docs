@@ -8,8 +8,5 @@ mkdocs-material
 scipy
 scikit-learn
 lxml
-argparse
-re
-et-xmlfile
 ### local packages -
 -e . # << uncomment this to install from setup.py
