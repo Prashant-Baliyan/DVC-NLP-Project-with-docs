@@ -60,6 +60,8 @@ def main(config_path, params_path):
     logging.info(f"saved our model at: {model_path}")
     
 
+
+
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
     args.add_argument("--config", "-c", default="configs/config.yaml")
