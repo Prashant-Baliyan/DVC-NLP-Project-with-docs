@@ -9,7 +9,6 @@ scipy
 scikit-learn
 lxml
 argparse
-random
 re
 et-xmlfile
 ### local packages -
