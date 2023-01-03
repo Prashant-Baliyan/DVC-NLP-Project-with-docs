@@ -37,4 +37,4 @@ def get_df(
         # names=column_names,
     )
     logging.info(f"The input data frame {path_to_data} of size {df.shape} is read.")
-    return 
+    return df
